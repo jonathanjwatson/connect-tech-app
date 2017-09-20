@@ -61,7 +61,7 @@ function getTracklist(name) {
             uri: URL,
             headers: {
                 Accept: 'application/json',
-                Authorization: bearerToken
+                Authorization: `Bearer ${process.env.BEARER}`
             },
             transform:function (body) {
                 body = JSON.parse (body);
