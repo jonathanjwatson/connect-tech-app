@@ -7,9 +7,6 @@
     "test": "test",
     "start": "PORT=8081 ENVIRONMENT=dev ENABLEPOLLER=1 nodemon server.js"
   },
-  "engines": {
-    "node": "8.4.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/britneydossett/connect-tech-app.git"
