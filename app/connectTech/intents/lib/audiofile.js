@@ -44,6 +44,7 @@ function getPlaylist(name) {
                         Authorization: bearerToken
                     },
                     transform: function (body) {
+                        console.log(body);
                         body = JSON.parse (body);
                         return body;
                     }
