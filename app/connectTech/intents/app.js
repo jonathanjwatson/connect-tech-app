@@ -52,6 +52,7 @@ let connectTech = function (app) {
          let name = request.slot('NAME');
          return app.audiofiles.getTracklist(name)
          .then( (playlist) => {
+             console.log(playlist)
              let track = playlist.items.preview_url,
                  trackName = playlist.items.name,
                  audioPlayerPayload = {
