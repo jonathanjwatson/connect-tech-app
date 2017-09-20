@@ -54,7 +54,6 @@ let connectTech = function (app) {
          .then( (playlist) => {
              let track = playlist.preview_url,
                  trackName = playlist.name,
-                 trackImage = playlist.album.images[0].url,
                  audioPlayerPayload = {
                     url: track,
                     token: trackName,
