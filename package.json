@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "test": "test",
-    "start": "PORT=8081 ENVIRONMENT=dev ENABLEPOLLER=1 nodemon server.js"
+    "start": "ENVIRONMENT=dev ENABLEPOLLER=1 nodemon server.js"
   },
   "repository": {
     "type": "git",
