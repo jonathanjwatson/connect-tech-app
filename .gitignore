@@ -7,3 +7,4 @@ npm-debug.log
 .ignore
 .vscode
 package-lock.json
+.env
