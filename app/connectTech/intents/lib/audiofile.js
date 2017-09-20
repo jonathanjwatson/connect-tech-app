@@ -55,7 +55,7 @@ function getPlaylist(name) {
 function getTracklist(name) {
     console.log('name', name);
     let artistName = name.toLowerCase();
-    let URL = `https://api.spotify.com/v1/search?q=${name}&type=track`,
+    let URL = `https://api.spotify.com/v1/search?q=${name}&type=track&limit=1`,
         options = {
             method: 'GET',
             uri: URL,

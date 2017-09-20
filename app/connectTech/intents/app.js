@@ -50,7 +50,7 @@ let connectTech = function (app) {
          slots: {NAME: 'NAME'}
      }, (request, response) => {
          let name = request.slot('NAME');
-         return app.audiofiles.getPlaylist(name)
+         return app.audiofiles.getTracklist(name)
          .then( (playlist) => {
              let track = playlist.preview_url,
                  trackName = playlist.name,
