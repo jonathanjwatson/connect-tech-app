@@ -60,7 +60,7 @@ let connectTech = function (app) {
                     expectedPreviousToken: 'some_previous_token',
                     offsetInMilliseconds: 0
                  };
-             app.makeCard(trackName, response, trackImage);
+             app.makeCard(trackName, response);
              return response.audioPlayerPlayStream('ENQUEUE', audioPlayerPayload)
                      .send();
          }).catch((error) => {
