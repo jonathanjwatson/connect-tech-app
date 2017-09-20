@@ -28,6 +28,7 @@ let api,
         }
     ];
 
+
 function getPlaylist(name) {
     console.log('name', name);
     let artistName = name.toLowerCase();
@@ -51,9 +52,27 @@ function getPlaylist(name) {
         }
     }
 }
+function getTracklist(name) {
+    console.log('name', name);
+    let artistName = name.toLowerCase();
+    let URL = `https://api.spotify.com/v1/search?q=${name}&type=track`,
+        options = {
+            method: 'GET',
+            uri: URL,
+            headers: {
+                Accept: 'application/json',
+                Authorization: bearerToken
+            },
+            transform:function (body) {
+                body = JSON.parse (body);
+                return body;
+            }
+        }
+        return request(options);
+}
 
 api = {
-    getPlaylist: getPlaylist
+    getTracklist: getTracklist
 };
 
 module.exports = api;

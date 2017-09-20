@@ -34,41 +34,40 @@ let connectTech = function (app) {
          response.shouldEndSession(false, 'What did you say?').send();
      });
 
-
      app.intent('getRonSwansonQuote', (request, response) => {
-        return app.ronSwansonApi.getQuote()
-        .then( (quote) => {
-            let finalQuote = quote;
-            app.makeCard(finalQuote, response, 'ron');
-            return response.say(`Ron Swanson Says: ${finalQuote}.
-                                Would you like to hear another quote?`)
-                                .shouldEndSession(false, 'Say that again?')
-                                .send();
-        });
-    });
+         return app.ronSwansonApi.getQuote()
+         .then( (quote) => {
+             let finalQuote = quote;
+             app.makeCard(finalQuote, response, 'ron');
+             return response.say(`Ron Swanson Says: ${finalQuote}.
+                                 Would you like to hear another quote?`)
+                                 .shouldEndSession(false, 'Say that again?')
+                                 .send();
+         });
+     });
 
-    app.intent('audioPlayer', {
-        slots: {NAME: 'NAME'}
-    }, (request, response) => {
-        let name = request.slot('NAME');
-        return app.audiofiles.getPlaylist(name)
-        .then( (playlist) => {
-            let track = playlist.preview_url,
-                trackName = playlist.name,
-                trackImage = playlist.album.images[0].url,
-                audioPlayerPayload = {
-                   url: track,
-                   token: trackName,
-                   expectedPreviousToken: 'some_previous_token',
-                   offsetInMilliseconds: 0
-                };
-            app.makeCard(trackName, response, trackImage);
-            return response.audioPlayerPlayStream('ENQUEUE', audioPlayerPayload)
-                    .send();
-        }).catch((error) => {
-            console.log('error', error);
-        });
-    });
+     app.intent('audioPlayer', {
+         slots: {NAME: 'NAME'}
+     }, (request, response) => {
+         let name = request.slot('NAME');
+         return app.audiofiles.getPlaylist(name)
+         .then( (playlist) => {
+             let track = playlist.preview_url,
+                 trackName = playlist.name,
+                 trackImage = playlist.album.images[0].url,
+                 audioPlayerPayload = {
+                    url: track,
+                    token: trackName,
+                    expectedPreviousToken: 'some_previous_token',
+                    offsetInMilliseconds: 0
+                 };
+             app.makeCard(trackName, response, trackImage);
+             return response.audioPlayerPlayStream('ENQUEUE', audioPlayerPayload)
+                     .send();
+         }).catch((error) => {
+             console.log('error', error);
+         });
+     });
 
     /**
      *  Amazon built-in intents:
@@ -80,7 +79,7 @@ let connectTech = function (app) {
      *      AMAZON.HelpIntent
      **/
      app.intent('AMAZON.CancelIntent', (request, response) => {
-         return response.say('Goodbye JazzCon!')
+         return response.say('Goodbye Connect Tech!')
                              .shouldEndSession(true)
                              .send();
      });
