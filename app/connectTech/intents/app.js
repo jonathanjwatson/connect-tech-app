@@ -35,10 +35,8 @@ let connectTech = function (app) {
      });
 
      app.intent('introduction', (request, response) => {
-         .then( (quote) => {
-             return response.say(`is a full-stack developer with several years of experience in front-end. He is currently seeking full-time employment as a Junior dev.`)
-                                 .send();
-         });
+        return response.say(`is a full-stack developer with several years of experience in front-end. He is currently seeking full-time employment as a Junior dev.`)
+                .send();
      });
      app.intent('getAJob', (request, response) => {
         return app.ronSwansonApi.getQuote()
