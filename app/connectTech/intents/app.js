@@ -30,8 +30,8 @@ let connectTech = function (app) {
      *      audioPlayer
      **/
      app.launch(function (request, response) {
-         response.say('Hello Connect Tech! You can hear a Ron Swanson Quote, or play the talking heads. What would like to hear?');
-         response.shouldEndSession(false, 'What did you say?').send();
+         response.say('Thanks, Jonathan! I love meeting new people. ');
+         response.shouldEndSession(false, 'Who did you say you were with?').send();
      });
 
      app.intent('getRonSwansonQuote', (request, response) => {
