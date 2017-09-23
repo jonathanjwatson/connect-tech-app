@@ -34,17 +34,23 @@ let connectTech = function (app) {
          response.shouldEndSession(false, 'Who did you say you were with?').send();
      });
 
-     app.intent('getRonSwansonQuote', (request, response) => {
-         return app.ronSwansonApi.getQuote()
+     app.intent('introduction', (request, response) => {
          .then( (quote) => {
-             let finalQuote = quote;
-             app.makeCard(finalQuote, response, 'ron');
-             return response.say(`Ron Swanson Says: ${finalQuote}.
-                                 Would you like to hear another quote?`)
-                                 .shouldEndSession(false, 'Say that again?')
+             return response.say(`is a full-stack developer with several years of experience in front-end. He is currently seeking full-time employment as a Junior dev.`)
                                  .send();
          });
      });
+     app.intent('getAJob', (request, response) => {
+        return app.ronSwansonApi.getQuote()
+        .then( (quote) => {
+            let finalQuote = quote;
+            app.makeCard(finalQuote, response, 'ron');
+            return response.say(`Ron Swanson Says: ${finalQuote}.
+                                Would you like to hear another quote?`)
+                                .shouldEndSession(false, 'Say that again?')
+                                .send();
+        });
+    });
 
      app.intent('audioPlayer', {
          slots: {NAME: 'NAME'}

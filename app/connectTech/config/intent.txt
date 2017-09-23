@@ -4,7 +4,7 @@
       "intent": "AMAZON.ResumeIntent"
     },
     {
-      "intent": "getRonSwansonQuote"
+      "intent": "introduction"
     },
     {
       "slots": [
