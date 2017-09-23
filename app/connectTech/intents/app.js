@@ -35,7 +35,7 @@ let connectTech = function (app) {
      });
 
      app.intent('introduction', (request, response) => {
-        return response.say(`is a full-stack developer with several years of experience in front-end. He is currently seeking full-time employment as a Junior dev.`)
+        return response.say(`Jonathan is a full-stack developer with several years of experience in front-end. He is currently seeking full-time employment as a Junior dev.`)
                 .send();
      });
      app.intent('getAJob', (request, response) => {
