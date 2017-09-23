@@ -14,3 +14,17 @@ getRonSwansonQuote listen to Ron Swanson
 audioPlayer play {NAME}
 audioPlayer let me hear {NAME}
 audioPlayer {NAME}
+
+
+
+introduction tell me about Jonathan
+introduction me about Jonathan
+introduction Jonathan
+introduction tell my friend about me
+introduction tell our guest about me
+interview tell me, should I work for {NAME}
+interview tell me, would {NAME} be a good fit
+interview tell me, would {NAME} be a good place to work?
+audioPlayer play {NAME}
+audioPlayer let me hear {NAME}
+audioPlayer {NAME}

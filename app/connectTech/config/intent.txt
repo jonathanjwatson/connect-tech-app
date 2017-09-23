@@ -13,7 +13,7 @@
           "type": "NAME"
         }
       ],
-      "intent": "audioPlayer"
+      "intent": "interview"
     },
     {
       "intent": "AMAZON.PauseIntent"
